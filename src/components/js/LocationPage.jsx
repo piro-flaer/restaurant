@@ -1,4 +1,4 @@
-import Header from "./Header.js";
+import Header from "./Header";
 import LocationApp from "./LocationApp";
 
 const LocationPage = () => {
