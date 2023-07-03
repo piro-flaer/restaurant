@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../css/ChefListv2.css";
+import "../css/ChefList.css";
 import "../css/ChefMedia.css";
 import Chefs from "../json/Chefs.json";
 import { AnimatePresence, motion } from "framer-motion";
