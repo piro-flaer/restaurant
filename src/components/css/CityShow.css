@@ -1,0 +1,51 @@
+.cityshow {
+  height: 26rem;
+  width: 52rem;
+  position: absolute;
+  z-index: 5;
+  top: 7.25rem;
+  right: 4.5rem;
+}
+
+.cityheadercontainer {
+  display: flex;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.75rem;
+}
+
+.cityheader {
+  margin: 0.25rem 0.5rem 0rem;
+  padding: 0.25rem 0.5rem 0rem;
+}
+
+.cityheader.inview::after {
+  content: "";
+  background-color: #ee540d;
+  display: flex;
+  scale: 0 1;
+  height: 5px;
+  position: relative;
+  top: -8px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.cityheader.inview:hover::after {
+  top: 0px;
+  scale: 1.1 1;
+  opacity: 1;
+}
+
+.cityheader.inview {
+  background-image: none;
+  border-bottom: none;
+}
+
+.show {
+  background-image: linear-gradient(to top, #ee540da8, #ecbba4a8);
+  border-bottom: 5px solid #ee540d;
+}
+
+.cityheadershow {
+  border-bottom: 3.5px solid black;
+}

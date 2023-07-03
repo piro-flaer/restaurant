@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metrophobic&display=swap");
+
+header {
+  background-color: black;
+  color: white;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  height: 6rem;
+  clip-path: inset(0px);
+}
+
+.logoname {
+  font-family: "Rammetto One", cursive;
+  font-size: 4.5rem;
+  padding-left: 15rem;
+  line-height: 4.75rem;
+}
+
+nav {
+  font-family: "Metrophobic", sans-serif;
+  margin: 0rem 2rem 0.5rem 0rem;
+}
+
+.navlink {
+  color: #ee540d;
+  text-decoration: none;
+  margin: 0rem 1.7rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
