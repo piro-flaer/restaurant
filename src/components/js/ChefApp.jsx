@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ChefList from "./ChefListv2";
+import ChefList from "./ChefList";
 import ChefDetails from "./ChefDetails";
 
 const ChefApp = () => {
