@@ -1,5 +1,5 @@
 import MenuApp from "./MenuApp";
-import Header from "./Header.js";
+import Header from "./Header";
 
 const MenuPage = () => {
   return (
