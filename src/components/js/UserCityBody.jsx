@@ -9,7 +9,7 @@ const UserCityBody = ({ userCityValue }) => {
       {filteredPlacesValues.map((item, index) => {
         return (
           <div
-            className={index % 2 === 0 ? "mapdataholdAer even" : "mapdataholder"}
+            className={index % 2 === 0 ? "mapdataholder even" : "mapdataholder"}
             key={index}
           >
             <MapAPI latValue={item[0]} longValue={item[1]} keyValue={index} />
