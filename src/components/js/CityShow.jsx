@@ -4,19 +4,32 @@ import "../css/CityBody.css";
 import UserCityHead from "./UserCityHead";
 import UserCityBody from "./UserCityBody";
 import CityHead from "./CityHead";
-import UserLocationFunction from "./UserLocationFunction";
+import UserLocationFunctionCity from "./UserLocationFunction";
 
-const CityShow = () => {
+const CityShow = ({ selectedCityName }) => {
   const [isInView, setIsInView] = useState(false);
-  const userCity = UserLocationFunction();
+  const userCity = UserLocationFunctionCity();
   useEffect(() => {
     userCity && setIsInView(true);
   }, [userCity]);
 
+  useEffect(() => {
+    selectedCityName && setIsInView(false);
+  }, [selectedCityName]);
+
+  const class01 = userCity || selectedCityName ? "show " : "";
+  const class02 = isInView ? "cityheader inview" : "cityheader";
+
   return (
     <>
       <div className="cityshow">
-        <div className="cityheadercontainer">
+        <div
+          className={
+            userCity || selectedCityName
+              ? "cityheadercontainer cityheadershow"
+              : "cityheadercontainer"
+          }
+        >
           {userCity && (
             <div
               style={{ cursor: "pointer" }}
@@ -25,7 +38,9 @@ const CityShow = () => {
               }}
             >
               <UserCityHead
-                classValue={isInView ? "cityheader" : "cityheader inview"}
+                classValue={
+                  isInView ? "cityheader show" : "cityheader inview show"
+                }
                 userCityValue={userCity}
               />
             </div>
@@ -37,13 +52,14 @@ const CityShow = () => {
             }}
           >
             <CityHead
-              classValue={isInView ? "cityheader inview" : "cityheader"}
+              classValue={class01 + class02}
+              cityName={selectedCityName ? selectedCityName : ""}
             />
           </div>
         </div>
         <div className="citybodycontainer">
           {userCity && isInView && <UserCityBody userCityValue={userCity} />}
-          {!isInView && <>Hello</>}
+          {!isInView && <UserCityBody userCityValue={selectedCityName} />}
         </div>
       </div>
     </>
