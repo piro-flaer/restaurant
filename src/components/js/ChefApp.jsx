@@ -1,10 +1,13 @@
-import React from "react";
-import ChefList from "./ChefList";
+import React, { useState } from "react";
+import ChefList from "./ChefListv2";
+import ChefDetails from "./ChefDetails";
 
 const ChefApp = () => {
+  const [chefName, setChefName] = useState();
   return (
     <>
-      <ChefList />
+      <ChefList setChef={setChefName} />
+      <ChefDetails chefNameSelected={chefName} />
     </>
   );
 };
