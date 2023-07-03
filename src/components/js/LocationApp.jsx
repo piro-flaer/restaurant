@@ -1,8 +1,10 @@
-import React from "react";
-import LocationList from "./LocationList.jsx";
-import CityShow from "./CityShow.jsx";
+import React, { useState } from "react";
+import LocationList from "./LocationList";
+import CityShow from "./CityShow";
 
 const LocationApp = () => {
+  const [selectedCityNameKey, setSelectedCityNameKey] = useState();
+
   return (
     <>
       <div className="menuholder">
@@ -10,8 +12,8 @@ const LocationApp = () => {
         <img className="inner_bg" src="images/inner-bg.png" alt=""></img>
         <img className="background_img" src="images/b1.jfif" alt=""></img>
       </div>
-      <LocationList />;
-      <CityShow />
+      <LocationList setSelectedCityName={setSelectedCityNameKey} />
+      <CityShow selectedCityName={selectedCityNameKey} />
     </>
   );
 };
