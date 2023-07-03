@@ -4,7 +4,7 @@ import "../css/LocationHolder.css";
 import LocationSearch from "./LocationSearch";
 import LocationSearchFunction from "./LocationSearchFunction";
 
-const LocationList = () => {
+const LocationList = ({ setSelectedCityName }) => {
   const [stateCityKey, setStateCityKey] = useState("");
   const filteredStateCity = LocationSearchFunction({ stateCityKey });
 
@@ -15,7 +15,13 @@ const LocationList = () => {
       <LocationSearch setStateCityKey={setStateCityKey} />
       <div className="locationholder">
         {filteredStateCity.map((item) => {
-          return <LocationState stateCityValue={item} key={item.state} />;
+          return (
+            <LocationState
+              stateCityValue={item}
+              key={item.state}
+              setCityName={setSelectedCityName}
+            />
+          );
         })}
       </div>
     </>
