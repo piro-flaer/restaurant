@@ -1,0 +1,30 @@
+[
+  {
+    "state": "Goa",
+    "cities": ["Margao", "Panaji"]
+  },
+  {
+    "state": "Gujarat",
+    "cities": ["Ahmedabad", "Surat", "Vadodara"]
+  },
+  {
+    "state": "Karnataka",
+    "cities": ["Bengaluru", "Chikkaballapura", "Chikkamagaluru", "Udupi"]
+  },
+  {
+    "state": "Kerala",
+    "cities": ["Palakkad", "Trivandrum", "Wayanad"]
+  },
+  {
+    "state": "Maharashtra",
+    "cities": ["Mumbai", "Nagpur", "Nashik", "Pune"]
+  },
+  {
+    "state": "Uttar Pradesh",
+    "cities": ["Ayodhya", "Jhansi", "Kanpur", "Lucknow", "Meerut"]
+  },
+  {
+    "state": "Uttarakhand",
+    "cities": ["Dehradun"]
+  }
+]
