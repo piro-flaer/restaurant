@@ -1,9 +1,9 @@
-import MenuApp from "./components/js/MenuApp";
+import Websites from "./components/js/Websites";
 
 function App() {
   return (
     <>
-      <MenuApp />
+      <Websites />
     </>
   );
 }
