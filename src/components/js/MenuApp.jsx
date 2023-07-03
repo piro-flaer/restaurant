@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RotateDiscAngle from "./RotateDiscAngle";
 import RotatingPlate from "./RotatingPlate";
-import MenuDetails from "./MenuDetails";
+import MenuDetail from "./MenuDetail";
 import { menuItemKeyString } from "./RotatingItems";
 
 const MenuApp = () => {
@@ -22,7 +22,7 @@ const MenuApp = () => {
         angle={angle}
         rotationAngle={rotationAngle}
       />
-      <MenuDetails menuTypeId={menuType} />
+      <MenuDetail menuTypeId={menuType} />
     </>
   );
 };
