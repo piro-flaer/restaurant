@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Vikas Khanna",
+    "description": "Vikas Khanna is a renowned Indian chef, cookbook author, and humanitarian. He is known for his Michelin-starred restaurant, Junoon, in New York City. Beyond his culinary achievements, Khanna is actively involved in philanthropic work, using food as a means to empower and uplift communities around the world.",
+    "url": "images/VK.png"
+  },
+  {
+    "name": "Gordon Ramsay",
+    "description": "Gordon Ramsay is a celebrity chef, restaurateur, and television personality. He has garnered worldwide fame through his numerous Michelin-starred restaurants, fiery personality, and television shows like Hell's Kitchen and MasterChef. Ramsay's culinary expertise and entertaining style have made him a prominent figure in the culinary world.",
+    "url": "images/GR.png"
+  },
+  {
+    "name": "Sanjeev Kapoor",
+    "description": "Sanjeev Kapoor is an iconic Indian chef, author, and television host. He is widely recognized for his contributions to popularizing Indian cuisine globally. Kapoor's cooking shows, cookbooks, and restaurants have made him a household name. His passion for showcasing Indian flavors and techniques has earned him a dedicated fan base.",
+    "url": "images/SK.png"
+  },
+  {
+    "name": "Dominique Crenn",
+    "description": "Dominique Crenn is an acclaimed French-born chef and the first female chef in America to be awarded three Michelin stars. She is known for her innovative and artistic approach to cooking, combining flavors and textures to create unique dining experiences. Crenn's culinary creations are celebrated for their elegance and storytelling.",
+    "url": "images/DC.png"
+  },
+  {
+    "name": "Massimo Bottura",
+    "description": "Massimo Bottura is a world-renowned Italian chef and restaurateur. His restaurant, Osteria Francescana, in Modena, Italy, has been recognized as one of the best in the world. Bottura's approach to cuisine is deeply rooted in tradition while embracing innovation. He is known for his imaginative reinterpretations of classic Italian dishes.",
+    "url": "images/MB.png"
+  },
+  {
+    "name": "Yoshihiro",
+    "description": "Yoshihiro is a Japanese chef and sushi master known for his exceptional skills in crafting exquisite sushi dishes. With a passion for precision and craftsmanship, Yoshihiro creates sushi that showcases the freshest ingredients and perfect balance of flavors. His dedication to the art of sushi has earned him a loyal following.",
+    "url": "images/Y.png"
+  },
+  {
+    "name": "Virgilio Martínez",
+    "description": "Virgilio Martínez is a Peruvian chef and advocate of Peruvian cuisine. He explores the diverse flavors and ingredients of his homeland, celebrating the rich culinary heritage of Peru. Martínez's restaurants, Central and Mil, have gained international acclaim for their innovative dishes that showcase the biodiversity of Peruvian ingredients.",
+    "url": "images/VM.png"
+  }
+]
