@@ -3,12 +3,15 @@ import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 import "../css/MapAPI.css";
 import { motion } from "framer-motion";
 import AddressDetails from "./AddressDetails";
+import ShowDirection from "./ShowDirection";
 
 const MapAPI = ({ latValue, longValue, keyValue }) => {
   const [mapZoom, setMapZoom] = useState(12.5);
   const [address, setAddress] = useState();
+  const [showDir, setShowDir] = useState(false);
+
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: ,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_KEY,
   });
 
   useEffect(() => {
@@ -25,67 +28,91 @@ const MapAPI = ({ latValue, longValue, keyValue }) => {
         }
       );
     }
-  }, [isLoaded]);
+  }, [isLoaded, latValue, longValue]);
 
   return (
     <>
       {isLoaded ? (
-        <motion.div
-          style={{
-            boxShadow: "2px 5px 15px black",
-          }}
-          whileHover={{
-            boxShadow: "2px 5px 15px black",
-            scaleX: 1.25,
-            scaleY: 1.5,
-            // border: "5px solid red",
-            zIndex: 2,
-          }}
-          onHoverStart={() => {
-            setMapZoom(15);
-            document
-              .querySelectorAll(".addressdetails")
-              [keyValue]?.classList.remove("hide");
-          }}
-          onHoverEnd={() => {
-            setMapZoom(12.5);
-            document
-              .querySelectorAll(".addressdetails")
-              [keyValue]?.classList.add("hide");
-          }}
-        >
-          <GoogleMap
-            zoom={mapZoom}
-            center={{ lat: latValue, lng: longValue }}
-            clickableIcons={false}
-            mapContainerClassName="mapholder"
-            options={{
-              fullscreenControl: false,
-              mapTypeControl: false,
-              streetViewControl: false,
-              zoomControl: false,
-              disableDoubleClickZoom: false,
-              scrollwheel: true,
-              styles: [
-                {
-                  featureType: "poi",
-                  stylers: [{ visibility: "off" }],
-                },
-              ],
+        <div>
+          <motion.div
+            onClick={() => {
+              setShowDir(!showDir);
+            }}
+            style={{
+              boxShadow: "2px 5px 15px black",
+              position: "relative",
+              zIndex: 2,
+            }}
+            whileHover={{
+              scaleX: 1.25,
+              scaleY: 1.5,
+            }}
+            whileTap={{
+              scaleX: 1,
+              scaleY: 1.25,
+            }}
+            onHoverStart={() => {
+              setMapZoom(15);
+              document.querySelectorAll(".addressdetails")[
+                keyValue
+              ].style.height = "2.75rem";
+              document
+                .querySelectorAll(".mapdataholder")
+                .forEach((divItem, index) => {
+                  if (index !== keyValue) divItem.classList.add("outofview");
+                });
+            }}
+            onHoverEnd={() => {
+              setMapZoom(12.5);
+              document.querySelectorAll(".addressdetails")[
+                keyValue
+              ].style.height = "0";
+              document
+                .querySelectorAll(".mapdataholder")
+                .forEach((divItem, index) => {
+                  if (index !== keyValue) divItem.classList.remove("outofview");
+                });
             }}
           >
-            <MarkerF
-              position={{
-                lat: latValue,
-                lng: longValue,
+            <GoogleMap
+              zoom={mapZoom}
+              center={{ lat: latValue, lng: longValue }}
+              clickableIcons={false}
+              mapContainerClassName="mapholder"
+              options={{
+                mapId: "c8bfd48d2fc6f3e0",
+                fullscreenControl: false,
+                mapTypeControl: false,
+                streetViewControl: false,
+                zoomControl: false,
+                disableDoubleClickZoom: false,
+                scrollwheel: true,
               }}
-              animation={window.google.maps.Animation.DROP}
-            />
-          </GoogleMap>
-          <AddressDetails addressValue={address} />
-        </motion.div>
+            >
+              <MarkerF
+                position={{
+                  lat: latValue,
+                  lng: longValue,
+                }}
+                animation={window.google.maps.Animation.DROP}
+                icon={{
+                  url: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png",
+                  scaledSize: { width: 50, height: 50 },
+                }}
+              />
+            </GoogleMap>
+            <AddressDetails addressValue={address} />
+          </motion.div>
+          <ShowDirection
+            showDirection={showDir}
+            setShowDirection={setShowDir}
+            keyValue={keyValue}
+            latitude={latValue}
+            longitude={longValue}
+          />
+        </div>
       ) : (
-        <div>Hey</div>
+        <div></div>
       )}
     </>
   );
