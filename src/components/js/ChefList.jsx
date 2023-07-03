@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "../css/ChefList.css";
+import "../css/ChefListv2.css";
 import "../css/ChefMedia.css";
 import Chefs from "../json/Chefs.json";
 import { AnimatePresence, motion } from "framer-motion";
 
-const ChefList = () => {
+const ChefList = ({ setChef }) => {
   const chefNames = Chefs.map((names) => {
     return names.name;
   });
@@ -23,6 +23,8 @@ const ChefList = () => {
         ? setBottomId(0)
         : setBottomId(BottomId + 1);
     }, 4750);
+
+    setChef(chefNames[MiddleId]);
 
     return () => clearInterval(interval);
   }, [TopId, MiddleId, BottomId]);
